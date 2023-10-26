@@ -9,7 +9,7 @@ export function MenuMobile() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="flex gap-4 items-center">
+    <div className="flex items-center gap-4 ">
       <MenuIcon
         width={20}
         className="text-dark-grayish-blue"
@@ -17,8 +17,8 @@ export function MenuMobile() {
       />
       <Image src={logo} alt="Project Logo" className="-mt-1" />
       {isOpen && (
-        <div className="absolute top-0 left-0 bg-zinc-900/75 h-screen w-screen">
-          <div className="space-y-10 absolute top-0 left-0 bg-white w-4/6 h-full py-4 px-6 transition-all">
+        <div className="fixed left-0 top-0 z-10 h-screen w-screen overflow-hidden bg-zinc-900/75">
+          <div className="fixed left-0 top-0 z-20 h-full w-4/6  space-y-10 bg-white px-6 py-4 transition-all">
             <X
               className="text-dark-grayish-blue"
               onClick={() => setIsOpen(false)}

@@ -13,7 +13,7 @@ export function Menu() {
         <MenuMobile />
       ) : (
         <nav className="flex items-center gap-6 lg:gap-10 xl:gap-14">
-          <ul className="flex  text-dark-grayish-blue order-2 xl:gap-12 lg:gap-8 gap-4 ">
+          <ul className="order-2  flex gap-4 text-dark-grayish-blue lg:gap-8 xl:gap-12 ">
             <a href="#">Collections</a>
             <a href="#">Men</a>
             <a href="#">Women</a>
