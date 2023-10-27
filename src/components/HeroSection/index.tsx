@@ -1,5 +1,5 @@
 import { ImagePreview } from '../ImagePreview'
-import { Minus, Plus, ShoppingCart } from 'lucide-react'
+import { AddToCart } from './AddToCart'
 
 export function HeroSection() {
   return (
@@ -28,19 +28,7 @@ export function HeroSection() {
           <p className="text-md text-grayish-blue line-through">$250.00</p>
         </div>
         <div className="flex flex-col items-center gap-8 lg:flex-row">
-          <div className="flex w-full items-center justify-between gap-6 rounded-lg bg-zinc-100 p-2.5 lg:w-auto">
-            <button className="rounded-lg p-1.5 hover:bg-pale-orange">
-              <Minus strokeWidth={2} className="text-orange" />
-            </button>
-            <span>1</span>
-            <button className="rounded-lg p-1.5 hover:bg-pale-orange">
-              <Plus strokeWidth={2} className="text-orange" />
-            </button>
-          </div>
-          <button className="flex w-full justify-center gap-4 rounded-lg bg-orange p-4 font-bold text-white shadow-lg">
-            <ShoppingCart />
-            Add to cart
-          </button>
+          <AddToCart />
         </div>
       </section>
     </div>

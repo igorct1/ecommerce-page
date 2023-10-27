@@ -1,5 +1,7 @@
-import { ShoppingCart } from 'lucide-react'
 import { Menu } from '../Menu'
+import { Cart } from '../Cart'
+import avatar from '../../assets/image-avatar.png'
+import Image from 'next/image'
 
 export function Header() {
   return (
@@ -7,14 +9,12 @@ export function Header() {
       <header className="flex items-center justify-between  py-6 md:py-10">
         <Menu />
         <div className="flex items-center gap-6 sm:gap-8 md:gap-10">
-          <ShoppingCart width={20} className="text-dark-grayish-blue" />
-          <picture className="overflow-hidden rounded-full">
-            <img
-              src="https://github.com/igorct1.png"
-              alt=""
-              className="w-6 sm:w-10 md:w-12"
-            />
-          </picture>
+          <Cart />
+          <Image
+            src={avatar}
+            className="w-6 cursor-pointer overflow-hidden rounded-full border-orange hover:border-2 sm:w-10 md:w-12"
+            alt="avatar-img"
+          />
         </div>
       </header>
       <div className=" bg-zinc-200 lg:h-[1px]" />

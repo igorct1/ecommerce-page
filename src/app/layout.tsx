@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Kumbh_Sans } from 'next/font/google'
 import { ReactNode } from 'react'
 import './globals.css'
+import { CartStorage } from '../contexts/CartContext'
 
 const kumb = Kumbh_Sans({ subsets: ['latin'], weight: ['400', '700'] })
 
@@ -14,7 +15,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className={kumb.className}>{children}</body>
+      <body className={kumb.className}>
+        <CartStorage>{children}</CartStorage>
+      </body>
     </html>
   )
 }

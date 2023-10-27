@@ -98,11 +98,15 @@ export function ImagePreview() {
                   </div>
                 </div>
                 <nav className="flex gap-6">
-                  {thumbs.map((thumb) => (
+                  {thumbs.map((thumb, index) => (
                     <div
                       key={thumb.src}
                       onClick={() => changePreviewImageCarousel(thumb)}
-                      className="overflow-hidden rounded-lg"
+                      className={`${
+                        index === currentImageIndex
+                          ? 'border-orange opacity-70'
+                          : 'border-transparent'
+                      } cursor-pointer overflow-hidden rounded-lg border-2`}
                     >
                       <Image src={thumb} alt="thumbnail-image" />
                     </div>
@@ -112,11 +116,15 @@ export function ImagePreview() {
             </Dialog.Portal>
           </Dialog.Root>
           <nav className="flex gap-6">
-            {thumbs.map((thumb) => (
+            {thumbs.map((thumb, index) => (
               <div
                 key={thumb.src}
                 onClick={() => changePreviewImageCarousel(thumb)}
-                className="overflow-hidden rounded-lg"
+                className={`${
+                  index === currentImageIndex
+                    ? 'border-orange opacity-70'
+                    : 'border-transparent'
+                } cursor-pointer overflow-hidden rounded-lg border-2`}
               >
                 <Image src={thumb} alt="thumbnail-image" />
               </div>
