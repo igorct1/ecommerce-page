@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { useWindowSize } from 'usehooks-ts'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import * as Dialog from '@radix-ui/react-dialog'
 
 import image1 from '../../assets/image-product-1.jpg'
 import image2 from '../../assets/image-product-2.jpg'
@@ -52,13 +53,13 @@ export function ImagePreview() {
           <div className="absolute top-2/4 flex w-full translate-y-[-50%] justify-between px-4">
             <span
               onClick={() => changePreviewImage('prev')}
-              className="rounded-full bg-zinc-50 p-2"
+              className="cursor-pointer rounded-full bg-zinc-50 p-2 hover:bg-zinc-200"
             >
               <ChevronLeft size={24} strokeWidth={3} />
             </span>
             <span
               onClick={() => changePreviewImage('next')}
-              className="rounded-full bg-zinc-50 p-2"
+              className="cursor-pointer rounded-full bg-zinc-50 p-2 hover:bg-zinc-200"
             >
               <ChevronRight size={24} strokeWidth={3} />
             </span>
@@ -66,9 +67,50 @@ export function ImagePreview() {
         </section>
       ) : (
         <div className="flex flex-col gap-8">
-          <div className="overflow-hidden rounded-lg">
-            <Image src={previewImage} alt="imagePreview" />
-          </div>
+          <Dialog.Root>
+            <Dialog.Trigger>
+              <div className="overflow-hidden rounded-lg">
+                <Image src={previewImage} alt="imagePreview" />
+              </div>
+            </Dialog.Trigger>
+            <Dialog.Portal>
+              <Dialog.Overlay className="fixed top-0 h-full w-full items-center  bg-zinc-900/90" />
+              <Dialog.Content className="absolute left-2/4 top-2/4 flex max-w-[520px] translate-x-[-50%] translate-y-[-50%] flex-col gap-4">
+                <div className="relative">
+                  <Image
+                    src={previewImage}
+                    alt="imagePreview"
+                    className="w-full overflow-hidden rounded-lg"
+                  />
+                  <div className="absolute top-2/4 flex  w-full translate-y-[-50%] justify-between">
+                    <span
+                      onClick={() => changePreviewImage('prev')}
+                      className="-ml-4 cursor-pointer rounded-full bg-zinc-50 p-2 hover:bg-zinc-200"
+                    >
+                      <ChevronLeft size={24} strokeWidth={3} />
+                    </span>
+                    <span
+                      onClick={() => changePreviewImage('next')}
+                      className="-mr-4 cursor-pointer rounded-full bg-zinc-50 p-2 hover:bg-zinc-200"
+                    >
+                      <ChevronRight size={24} strokeWidth={3} />
+                    </span>
+                  </div>
+                </div>
+                <nav className="flex gap-6">
+                  {thumbs.map((thumb) => (
+                    <div
+                      key={thumb.src}
+                      onClick={() => changePreviewImageCarousel(thumb)}
+                      className="overflow-hidden rounded-lg"
+                    >
+                      <Image src={thumb} alt="thumbnail-image" />
+                    </div>
+                  ))}
+                </nav>
+              </Dialog.Content>
+            </Dialog.Portal>
+          </Dialog.Root>
           <nav className="flex gap-6">
             {thumbs.map((thumb) => (
               <div
