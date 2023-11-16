@@ -49,7 +49,7 @@ export function AddToCart() {
       </div>
       <Toast.Provider swipeDirection="right">
         <button
-          className="flex w-full justify-center gap-4 rounded-lg bg-orange p-4 font-bold text-white shadow-2xl hover:bg-orange/80"
+          className="flex w-full justify-center gap-4 rounded-lg bg-orange p-4 font-bold text-white  shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:bg-orange/80 hover:shadow-orange"
           onClick={handleAddToCart}
         >
           <ShoppingCart />
@@ -59,7 +59,7 @@ export function AddToCart() {
         <Toast.Root
           open={open}
           onOpenChange={setOpen}
-          className=" grid grid-cols-[auto_max-content] items-center gap-x-[15px] rounded-md bg-orange p-[15px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] [grid-template-areas:_'title_action'_'description_action'] data-[swipe=cancel]:translate-x-0 data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[state=closed]:animate-hide data-[state=open]:animate-slideIn data-[swipe=end]:animate-swipeOut data-[swipe=cancel]:transition-[transform_200ms_ease-out]"
+          className=" grid grid-cols-[auto_max-content] items-center gap-x-[15px] rounded-md bg-orange p-[15px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]  shadow-orange [grid-template-areas:_'title_action'_'description_action'] data-[swipe=cancel]:translate-x-0 data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[state=closed]:animate-hide data-[state=open]:animate-slideIn data-[swipe=end]:animate-swipeOut data-[swipe=cancel]:transition-[transform_200ms_ease-out]"
         >
           <Toast.Title className="mb-[5px] text-[15px] font-semibold text-zinc-50 [grid-area:_title]">
             Item adicionado ao carrinho
