@@ -43,12 +43,12 @@ export function ImagePreview() {
 
   return (
     <>
-      {width <= 1023 ? (
+      {width <= 1024 ? (
         <section className="relative flex">
           <Image
             src={previewImage}
             alt="imagePreview"
-            className="max-h-[773px] w-full"
+            className="max-h-[773px] w-full hover:scale-110"
           />
           <div className="absolute top-2/4 flex w-full translate-y-[-50%] justify-between px-4">
             <span
@@ -69,7 +69,7 @@ export function ImagePreview() {
         <div className="flex flex-col gap-8">
           <Dialog.Root>
             <Dialog.Trigger>
-              <div className="overflow-hidden rounded-lg">
+              <div className="overflow-hidden rounded-lg hover:scale-105">
                 <Image src={previewImage} alt="imagePreview" />
               </div>
             </Dialog.Trigger>
@@ -124,7 +124,7 @@ export function ImagePreview() {
                   index === currentImageIndex
                     ? 'border-orange opacity-70'
                     : 'border-transparent'
-                } cursor-pointer overflow-hidden rounded-lg border-2`}
+                } hover:scale-105" cursor-pointer overflow-hidden rounded-lg border-2`}
               >
                 <Image src={thumb} alt="thumbnail-image" />
               </div>
