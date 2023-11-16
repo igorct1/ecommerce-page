@@ -20,8 +20,8 @@ const config: Config = {
       },
       keyframes: {
         hide: {
-          from: { opacity: 1 },
-          to: { opacity: 0 },
+          from: { opacity: '1' },
+          to: { opacity: '0' },
         },
         slideIn: {
           from: {
