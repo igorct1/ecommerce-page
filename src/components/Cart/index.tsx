@@ -31,7 +31,7 @@ export function Cart() {
         </Dialog.Trigger>
         <Dialog.Content asChild>
           <div className="absolute left-2/4 right-4 top-24 z-10 flex min-w-[340px]  translate-x-[-50%] flex-col items-start  rounded-lg bg-white shadow-xl md:left-auto md:top-24 md:-translate-x-0 2xl:right-64">
-            <span className="p-8 font-bold">Cart</span>
+            <span className="p-4 font-bold md:p-8">Cart</span>
 
             <div className="h-[1px] w-full bg-zinc-200" />
 
@@ -40,7 +40,7 @@ export function Cart() {
                 Your cart is empty
               </span>
             ) : (
-              <div className="flex flex-col  gap-6 p-8">
+              <div className="flex w-full  flex-col gap-6 p-4 md:p-8">
                 {cart.map((item) => {
                   return <CartItem key={item.name} cartItem={item} />
                 })}
